@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - About</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* About Page Specific Styles */
+        body { padding: 2rem; }
+        
+        .about-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            min-height: 500px;
+        }
+
+        .about-photo-card {
+            background: #e3cdc0; /* Soft beige placeholder */
+            border-radius: var(--card-radius);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0,0,0,0.05); /* Same border as other cards */
+        }
+
+        .about-text-card {
+            background: white;
+            border-radius: var(--card-radius);
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .about-text-card h1 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .about-text-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-banner {
+            width: 100%;
+            height: 500px;
+            background: #edece8; /* Soft gray/beige like reference */
+            border-radius: var(--card-radius);
+            position: relative;
+            overflow: hidden;
+            padding: 3rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        /* Simulating the tree shadow effect with blurred radial gradients */
+        .banner-bg-shadow {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 80% 10%, rgba(180, 178, 170, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 50%, rgba(160, 158, 150, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 60% -20%, rgba(170, 168, 160, 0.4) 0%, transparent 60%);
+            filter: blur(25px);
+            pointer-events: none;
+        }
+
+        .banner-icon {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.03);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .banner-text {
+            max-width: 400px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+
+        .back-home-btn {
+            background: rgba(0,0,0,0.06);
+            border: none;
+            padding: 0.8rem 1.4rem;
+            border-radius: var(--pill-radius);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 1;
+            transition: background var(--transition-speed);
+        }
+
+        .back-home-btn:hover {
+            background: rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Overrides */
+        @media (max-width: 1024px) {
+            .about-intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-photo-card {
+                min-height: 400px;
+            }
+            .about-text-card {
+                padding: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            .about-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding: 2rem;
+                height: 400px;
+            }
+            .back-home-btn {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">slowde</div>
+        <nav class="nav-menu">
+            <div class="nav-links">
+                <a href="about.html" class="nav-item active">소개</a>
+                <a href="index.html" class="nav-item">작업물</a>
+                
+                <div class="nav-item contact-dropdown">
+                    연락처 <span class="chevron">▾</span>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.youtube.com/@slowde" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+                        <li><a href="https://blog.naver.com/acazz" target="_blank" rel="noopener noreferrer">Blog</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-main">
+        <!-- Large Gradient Shadow footer -> now top banner -->
+        <section class="about-banner">
+            <div class="banner-bg-shadow"></div>
+            <div class="banner-icon">☀️</div>
+            
+            <div class="banner-text">
+                Outside of work you'll find me spending time with my family, writing music, or building my ideas.
+            </div>
+
+            <a href="index.html" class="back-home-btn">
+                Back home <span>→</span>
+            </a>
+        </section>
+
+        <!-- Two Column Intro section -> now bottom -->
+        <section class="about-intro-grid">
+            <div class="about-photo-card">
+                <!-- User will attach image later here -->
+            </div>
+            <div class="about-text-card">
+                <h1>I love building things for others.</h1>
+                <p>Currently I work at Figma on AI. Previously, I worked with some wonderful people at Discord, SteelSeries, and agencies.</p>
+                <p>Everyday I'm driven to solve problems for others and create delightful user experiences.</p>
+                <p>Lately I've been building free tools for others to create, play, and explore ideas.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-left">
+            <p>Copyright</p>
+            <p>Made in Korea</p>
+            <p class="touch-link">Get in touch with me</p>
+        </div>
+        <div class="footer-right">
+            <p>© 2026</p>
+            <div class="footer-links">
+                <a href="mailto:slowde417@gmail.com">slowde417@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
