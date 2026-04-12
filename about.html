@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - About</title>
     <link rel="stylesheet" href="style.css">
+    <!-- NanumSquare Neo Font -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <!-- Redirect to SPA home page hash to keep music continuous -->
+    <script>
+        window.location.replace('index.html#about');
+    </script>
     <style>
         /* About Page Specific Styles */
         body { padding: 2rem; }
@@ -165,18 +171,18 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">slowde</div>
+        <a href="index.html" class="logo" style="text-decoration:none;">느린빛</a>
         <nav class="nav-menu">
             <div class="nav-links">
                 <a href="about.html" class="nav-item active">소개</a>
-                <a href="index.html" class="nav-item">작업물</a>
+                <a href="index.html#works" class="nav-item">작업물</a>
                 
                 <div class="nav-item contact-dropdown">
                     연락처 <span class="chevron">▾</span>
                     <ul class="dropdown-menu">
                         <li><a href="https://www.youtube.com/@slowde" target="_blank" rel="noopener noreferrer">Youtube</a></li>
                         <li><a href="https://blog.naver.com/acazz" target="_blank" rel="noopener noreferrer">Blog</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.instagram.com/slow_calligraphy?igsh=MWVwd2dzMThxdm90MA%3D%3D" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                     </ul>
                 </div>
             </div>
