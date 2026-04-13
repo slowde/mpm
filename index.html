@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>느린빛 포트폴리오</title>
     <link rel="stylesheet" href="style.css">
-    <!-- NanumSquare Neo Font -->
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
 </head>
 
@@ -31,7 +30,6 @@
 
     <main class="bento-grid">
         <div id="home-view">
-            <!-- Hero Section (Row 1) -->
             <section class="card hero-section glass-highlight">
                 <div class="hero-content">
                     <h2>저는 다른 사람들을 위해<br>무언가를 만드는 것을 좋아합니다.</h2>
@@ -39,7 +37,6 @@
                     <p>매일 사용자의 문제를 해결하고 긍정적인 경험을 창출하는 것에서 동기를 부여받습니다.</p>
                     <p>복잡한 세상을 누구나 즐겁게 탐색할 수 있는 최적의 서비스 경험을 설계하기 위해 끊임없이 고민합니다.</p>
                 </div>
-                <!-- Profile Image Placeholder -->
                 <div class="hero-image placeholder-gradient-1">
                     <video autoplay loop muted playsinline class="card-video">
                         <source src="컬러풀영상.mp4" type="video/mp4">
@@ -47,7 +44,6 @@
                 </div>
             </section>
 
-            <!-- Works Section (Row 2) -->
             <section id="works" class="works-row">
                 <a href="https://www.youtube.com/@slowde" target="_blank" rel="noopener noreferrer"
                     class="card work-item">
@@ -64,19 +60,18 @@
                         </video>
                     </div>
                 </a>
-                <a href="https://www.instagram.com/slow_calligraphy?igsh=MWVwd2dzMThxdm90MA%3D%3D" target="_blank"
-                    rel="noopener noreferrer" class="card work-item">
+                
+                <div id="calligraphy-trigger" class="card work-item" style="cursor: pointer;">
                     <div class="nested-media-box">
                         <div class="slide active" style="background-image: url('slide1.png.png');"></div>
                         <div class="slide" style="background-image: url('slide2.png.png');"></div>
                         <div class="slide" style="background-image: url('slide3.png.jpg');"></div>
                         <div class="slide" style="background-image: url('slide4.png.png');"></div>
                     </div>
-                </a>
+                </div>
             </section>
-            <!-- Bottom Image Card (Row 3) -->
+
             <section class="card bottom-image-card">
-                <!-- Hologram Image Background -->
                 <div class="bottom-card-image-wrapper">
                     <video autoplay loop muted playsinline class="bottom-card-image" id="bg-video">
                         <source src="음악영상.mp4" type="video/mp4">
@@ -87,7 +82,6 @@
                     <source src="Treasure Hunt - Jeremy Korpas.mp3" type="audio/mpeg">
                 </audio>
 
-                <!-- Music player embedded inside the image area -->
                 <div class="music-player-bar">
                     <button class="control-btn" id="play-btn" aria-label="Play">▶</button>
                     <div class="player-track">
@@ -102,10 +96,8 @@
         </div>
     </main>
 
-    <!-- SPA About View -->
     <main class="about-main" id="about-view" style="display: none;">
         <section class="about-banner">
-            <!-- Aurora Video Background -->
             <video autoplay loop muted playsinline class="card-video" style="z-index: 0; pointer-events: none;">
                 <source src="오로라배경.mp4" type="video/mp4">
             </video>
@@ -133,6 +125,17 @@
             </div>
         </section>
     </main>
+
+    <div id="calligraphy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 class="modal-title">캘리그라피 작업 상세보기</h3>
+            <div class="modal-body">
+                <img id="modal-image" src="slide1.png.png" alt="작업물">
+            </div>
+            <p class="modal-footer-text">캘리그라피 작업물 포트폴리오 입니다.</p>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-left">
