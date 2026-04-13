@@ -86,15 +86,15 @@
             </section>
 
             <section id="works" class="works-row">
-                <a href="https://www.youtube.com/@slowde" target="_blank" rel="noopener noreferrer" class="card work-item">
+                <div class="card work-item" onclick="openVideoPopup('유튜브영상.mp4', '유튜브 작업물 상세 보기', '유튜브 채널 운영 및 영상 편집 포트폴리오입니다.')" style="cursor: pointer;">
                     <div class="nested-media-box">
                         <video autoplay loop muted playsinline class="inner-media">
                             <source src="유튜브영상.mp4" type="video/mp4">
                         </video>
                     </div>
-                </a>
+                </div>
 
-                <div class="card work-item" onclick="openVideoPopup()" style="cursor: pointer;">
+                <div class="card work-item" onclick="openVideoPopup('블로그영상.mp4', '블로그 작업물 상세 보기', '디자인과 마케팅 통찰력을 결합하여 제작된 블로그 콘텐츠 사례입니다.')" style="cursor: pointer;">
                     <div class="nested-media-box">
                         <video autoplay loop muted playsinline class="inner-media">
                             <source src="블로그영상.mp4" type="video/mp4">
@@ -181,20 +181,30 @@
         <div class="video-popup-content">
             <button class="video-popup-close" onclick="closeVideoPopup()">&times;</button>
             <video id="popupVideo" controls>
-                <source src="블로그영상.mp4" type="video/mp4">
+                <source id="videoSource" src="" type="video/mp4">
             </video>
             <div class="video-popup-info">
-                <h3>블로그 작업물 상세 보기</h3>
-                <p>디자인과 마케팅 통찰력을 결합하여 제작된 블로그 콘텐츠 사례입니다.</p>
+                <h3 id="popupTitle">작업물 상세 보기</h3>
+                <p id="popupDescription">상세 설명입니다.</p>
             </div>
         </div>
     </div>
 
     <script src="main.js"></script>
     <script>
-        function openVideoPopup() {
+        function openVideoPopup(videoSrc, title, description) {
             const popup = document.getElementById('videoPopup');
             const video = document.getElementById('popupVideo');
+            const source = document.getElementById('videoSource');
+            const titleElem = document.getElementById('popupTitle');
+            const descElem = document.getElementById('popupDescription');
+
+            // 내용 교체
+            source.src = videoSrc;
+            video.load(); // 새로운 소스 로드
+            titleElem.innerText = title;
+            descElem.innerText = description;
+
             popup.classList.add('active');
             video.play();
         }
