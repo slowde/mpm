@@ -6,89 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>느린빛 포트폴리오</title>
     <link rel="stylesheet" href="style.css">
+    <!-- NanumSquare Neo Font -->
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
-    <style>
-        /* 팝업 레이아웃 스타일 */
-        .video-popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(8px);
-        }
-        .video-popup-overlay.active { display: flex; }
-        .video-popup-content {
-            background: #fff;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 24px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        /* 미디어 영역 스타일 */
-        #popupVideo, #popupImageContainer { width: 100%; display: none; background: #000; }
-        
-        /* 이미지 슬라이드 내부 스타일 (화살표 제거됨) */
-        #popupImageContainer { 
-            position: relative; 
-            min-height: 400px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            background: #fff; 
-        }
-        .popup-slide-img { 
-            max-width: 100%; 
-            max-height: 70vh; 
-            display: none; 
-            animation: fadeIn 0.5s; 
-        }
-        .popup-slide-img.active { display: block; }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .video-popup-info { padding: 25px 30px; background: #fff; }
-        .video-popup-info h3 { margin: 0 0 10px 0; font-family: 'NanumSquare Neo', sans-serif; font-size: 1.3rem; color: #111; }
-        .video-popup-info p { margin: 0; color: #666; font-size: 1rem; line-height: 1.6; }
-        
-        .video-popup-close {
-            position: absolute;
-            top: 20px; right: 20px;
-            width: 40px; height: 40px;
-            background: #fff;
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 15;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        /* 메인 페이지 슬라이드 자동 재생 스타일 보강 */
-        .nested-media-box .slide {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .nested-media-box .slide.active {
-            opacity: 1;
-        }
-    </style>
 </head>
 
 <body>
@@ -100,9 +19,11 @@
             <div class="nav-item contact-dropdown">
                 연락처 <span class="chevron">▾</span>
                 <ul class="dropdown-menu">
-                    <li><a href="https://www.youtube.com/@slowde" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+                    <li><a href="https://www.youtube.com/@slowde" target="_blank" rel="noopener noreferrer">Youtube</a>
+                    </li>
                     <li><a href="https://blog.naver.com/acazz" target="_blank" rel="noopener noreferrer">Blog</a></li>
-                    <li><a href="https://www.instagram.com/slow_calligraphy?igsh=MWVwd2dzMThxdm90MA%3D%3D" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/slow_calligraphy?igsh=MWVwd2dzMThxdm90MA%3D%3D"
+                            target="_blank" rel="noopener noreferrer">Instagram</a></li>
                 </ul>
             </div>
         </nav>
@@ -110,11 +31,15 @@
 
     <main class="bento-grid">
         <div id="home-view">
+            <!-- Hero Section (Row 1) -->
             <section class="card hero-section glass-highlight">
                 <div class="hero-content">
                     <h2>저는 다른 사람들을 위해<br>무언가를 만드는 것을 좋아합니다.</h2>
                     <p>디자인, 캘리그라피, 마케팅 경력을 바탕으로 시각적 감각과 비즈니스적 통찰력을 동시에 갖췄습니다.</p>
+                    <p>매일 사용자의 문제를 해결하고 긍정적인 경험을 창출하는 것에서 동기를 부여받습니다.</p>
+                    <p>복잡한 세상을 누구나 즐겁게 탐색할 수 있는 최적의 서비스 경험을 설계하기 위해 끊임없이 고민합니다.</p>
                 </div>
+                <!-- Profile Image Placeholder -->
                 <div class="hero-image placeholder-gradient-1">
                     <video autoplay loop muted playsinline class="card-video">
                         <source src="컬러풀영상.mp4" type="video/mp4">
@@ -122,42 +47,47 @@
                 </div>
             </section>
 
+            <!-- Works Section (Row 2) -->
             <section id="works" class="works-row">
-                <div class="card work-item" onclick="openVideoPopup('유튜브영상.mp4', '유튜브 작업물 상세 보기', '유튜브 채널 운영 및 영상 편집 포트폴리오입니다.')" style="cursor: pointer;">
+                <a href="https://www.youtube.com/@slowde" target="_blank" rel="noopener noreferrer"
+                    class="card work-item">
                     <div class="nested-media-box">
                         <video autoplay loop muted playsinline class="inner-media">
                             <source src="유튜브영상.mp4" type="video/mp4">
                         </video>
                     </div>
-                </div>
-
-                <div class="card work-item" onclick="openVideoPopup('블로그영상.mp4', '블로그 작업물 상세 보기', '디자인과 마케팅 통찰력을 결합하여 제작된 블로그 콘텐츠 사례입니다.')" style="cursor: pointer;">
+                </a>
+                <a href="https://blog.naver.com/acazz" target="_blank" rel="noopener noreferrer" class="card work-item">
                     <div class="nested-media-box">
                         <video autoplay loop muted playsinline class="inner-media">
                             <source src="블로그영상.mp4" type="video/mp4">
                         </video>
                     </div>
-                </div>
-
-                <div class="card work-item" id="main-insta-card" onclick="openImagePopup(['slide1.png.png', 'slide2.png.png', 'slide3.png.jpg', 'slide4.png.png'], '캘리그라피 작업 상세보기', '캘리그라피 작업물 포트폴리오 입니다.')" style="cursor: pointer;">
-                    <div class="nested-media-box" id="main-insta-slides">
+                </a>
+                <a href="https://www.instagram.com/slow_calligraphy?igsh=MWVwd2dzMThxdm90MA%3D%3D" target="_blank"
+                    rel="noopener noreferrer" class="card work-item">
+                    <div class="nested-media-box">
                         <div class="slide active" style="background-image: url('slide1.png.png');"></div>
                         <div class="slide" style="background-image: url('slide2.png.png');"></div>
                         <div class="slide" style="background-image: url('slide3.png.jpg');"></div>
                         <div class="slide" style="background-image: url('slide4.png.png');"></div>
                     </div>
-                </div>
+                </a>
             </section>
-
+            <!-- Bottom Image Card (Row 3) -->
             <section class="card bottom-image-card">
+                <!-- Hologram Image Background -->
                 <div class="bottom-card-image-wrapper">
                     <video autoplay loop muted playsinline class="bottom-card-image" id="bg-video">
                         <source src="음악영상.mp4" type="video/mp4">
                     </video>
                 </div>
+
                 <audio id="bg-audio" autoplay loop>
                     <source src="Treasure Hunt - Jeremy Korpas.mp3" type="audio/mpeg">
                 </audio>
+
+                <!-- Music player embedded inside the image area -->
                 <div class="music-player-bar">
                     <button class="control-btn" id="play-btn" aria-label="Play">▶</button>
                     <div class="player-track">
@@ -172,97 +102,53 @@
         </div>
     </main>
 
-    <div id="videoPopup" class="video-popup-overlay" onclick="closeVideoPopupByBg(event)">
-        <div class="video-popup-content">
-            <button class="video-popup-close" onclick="closeVideoPopup()">&times;</button>
-            
-            <video id="popupVideo" controls>
-                <source id="videoSource" src="" type="video/mp4">
+    <!-- SPA About View -->
+    <main class="about-main" id="about-view" style="display: none;">
+        <section class="about-banner">
+            <!-- Aurora Video Background -->
+            <video autoplay loop muted playsinline class="card-video" style="z-index: 0; pointer-events: none;">
+                <source src="오로라배경.mp4" type="video/mp4">
             </video>
 
-            <div id="popupImageContainer">
-                <div id="slideImageList"></div>
+            <div class="banner-text">
+                <div id="about-typewriter-container" style="min-height: 1.8em;">
+                    <span style="font-weight: 700 !important;">느린빛</span>은 화면 속 빛을 통해 가치를 전달하는 디자인 스튜디오입니다.
+                </div>
+                <br>
+                <div id="about-subtitle" style="color: rgba(255, 255, 255, 0.6); opacity: 0; transition: opacity 1.5s ease;">
+                    단순히 속도에 치중하기보다 공들여 살피고 고민하는 과정을 ‘느리다’라는 이름에 담았습니다. 빛으로 그려내는 세심한 시각적 경험, 느린빛이 당신의 아이디어를 깊이 있게 비춥니다.
+                </div>
             </div>
+        </section>
 
-            <div class="video-popup-info">
-                <h3 id="popupTitle">작업물 상세 보기</h3>
-                <p id="popupDescription">상세 설명입니다.</p>
+        <section class="about-intro-grid">
+            <div class="about-photo-card">
+                <img src="3d캐릭터.PNG">
+            </div>
+            <div class="about-text-card">
+                <h1>오 종 은</h1>
+                <p>Designer / Calligrapher / Marketer</p>
+                <p>캘리그라피와 디자인으로 다져진 심미안에 마케팅적 사고를 더해, 브랜드와 사용자가 만나는 기분 좋은 경험을 설계합니다.</p>
+                <p>다양한 직무를 거치며 얻은 유연한 사고와 AI라는 강력한 도구를 활용해, 복잡한 문제를 즐거운 발견으로 바꾸는 과정 자체를 즐깁니다. 현재는 IT 기업에서 혁신적인 서비스를 그리며, 사람들이 세상을 더 쉽고 재미있게 탐험할 수 있도록 돕고 있습니다.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-left">
+            <p>Copyright</p>
+            <p>Made in Korea</p>
+            <p class="touch-link">Get in touch with me</p>
+        </div>
+        <div class="footer-right">
+            <p>© 2026</p>
+            <div class="footer-links">
+                <a href="mailto:slowde417@gmail.com">slowde417@gmail.com</a>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script src="main.js"></script>
-    <script>
-        /* [1] 메인 페이지 캘리그라피 박스 자동 슬라이드 */
-        let mainSlideIdx = 0;
-        function autoMainSlide() {
-            const slides = document.querySelectorAll('#main-insta-slides .slide');
-            if(slides.length === 0) return;
-            slides[mainSlideIdx].classList.remove('active');
-            mainSlideIdx = (mainSlideIdx + 1) % slides.length;
-            slides[mainSlideIdx].classList.add('active');
-        }
-        setInterval(autoMainSlide, 3000); // 3초마다 메인 슬라이드 전환
-
-        /* [2] 팝업 시스템 */
-        let popupSlideIdx = 0;
-        let popupSlideInterval;
-        let slideImages = [];
-
-        function openVideoPopup(videoSrc, title, description) {
-            resetPopup();
-            document.getElementById('popupVideo').style.display = 'block';
-            document.getElementById('videoSource').src = videoSrc;
-            document.getElementById('popupVideo').load();
-            document.getElementById('popupTitle').innerText = title;
-            document.getElementById('popupDescription').innerText = description;
-            document.getElementById('videoPopup').classList.add('active');
-            document.getElementById('popupVideo').play();
-        }
-
-        function openImagePopup(imgs, title, description) {
-            resetPopup();
-            slideImages = imgs;
-            popupSlideIdx = 0;
-            const container = document.getElementById('slideImageList');
-            container.innerHTML = '';
-            
-            slideImages.forEach((src, idx) => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.className = 'popup-slide-img' + (idx === 0 ? ' active' : '');
-                container.appendChild(img);
-            });
-
-            document.getElementById('popupImageContainer').style.display = 'flex';
-            document.getElementById('popupTitle').innerText = title;
-            document.getElementById('popupDescription').innerText = description;
-            document.getElementById('videoPopup').classList.add('active');
-
-            // 팝업 내 자동 슬라이드 시작 (2.5초 간격)
-            popupSlideInterval = setInterval(() => {
-                const pImgs = document.querySelectorAll('.popup-slide-img');
-                pImgs[popupSlideIdx].classList.remove('active');
-                popupSlideIdx = (popupSlideIdx + 1) % pImgs.length;
-                pImgs[popupSlideIdx].classList.add('active');
-            }, 2500);
-        }
-
-        function resetPopup() {
-            clearInterval(popupSlideInterval);
-            document.getElementById('popupVideo').style.display = 'none';
-            document.getElementById('popupVideo').pause();
-            document.getElementById('popupImageContainer').style.display = 'none';
-        }
-
-        function closeVideoPopup() {
-            document.getElementById('videoPopup').classList.remove('active');
-            resetPopup();
-        }
-
-        function closeVideoPopupByBg(event) {
-            if (event.target.id === 'videoPopup') closeVideoPopup();
-        }
-    </script>
 </body>
+
 </html>
